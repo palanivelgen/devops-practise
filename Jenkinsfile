@@ -1,3 +1,4 @@
+@library(common_shared_library) _
 pipeline{
     agent  any
     
@@ -5,7 +6,10 @@ pipeline{
         stage('Git CheckOut'){
             steps{
                 script{
-                    git branch: 'main', url: 'https://github.com/palanivelgen/devops-practise.git'
+                    gitCheckout(
+                        branch:"main"
+                        url: "https://github.com/palanivelgen/devops-practise.git"
+                    )
                 }
             }
         }
