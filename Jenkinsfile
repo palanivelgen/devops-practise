@@ -7,7 +7,7 @@ pipeline{
             steps{
                 
                     gitCheckout(
-                        branch:"main"
+                        branch:"main",
                         url: "https://github.com/palanivelgen/devops-practise.git"
                     )
                 
