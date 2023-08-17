@@ -5,7 +5,7 @@ pipeline{
         stage('Git CheckOut'){
             steps{
                 script{
-                    git branch: 'admin', url: 'https://github.com/palanivelgen/devops-practise.git'
+                    git branch: 'main', url: 'https://github.com/palanivelgen/devops-practise.git'
                 }
             }
         }
