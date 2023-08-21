@@ -7,8 +7,10 @@ pipeline{
     }
 
     parameters{
-        choice(name: 'action',choices:'Create\nDestroy', description:'Choose Create/Destroy')
-    }
+        choice(name: 'action',choices:'Create\nDestroy', description:'Choose Create/Destroy')4
+        string(name:'ImageName', description: 'Name of the docker build', defaultvalue:'javaapp')
+        string(name:'ImageTag', description: 'Name of the Image Tag', defaultvalue:'v1')
+        string(name:'AppName', description: 'Name of the App', defaultvalue:'SrpingBoot')    }
 
     stages{
 
@@ -109,7 +111,7 @@ pipeline{
         
         steps{
             script{
-                dockerBuild()
+                dockerBuild("${params.ImageName}","${params.ImageTag}","${params.AppName}")
             }
         }
         }
