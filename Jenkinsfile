@@ -8,9 +8,9 @@ pipeline{
 
     parameters{
         choice(name: 'action',choices:'Create\nDestroy', description:'Choose Create/Destroy')4
-        string(name:'ImageName', description: 'Name of the docker build', defaultvalue:'javaapp')
-        string(name:'ImageTag', description: 'Name of the Image Tag', defaultvalue:'v1')
-        string(name:'AppName', description: 'Name of the App', defaultvalue:'SrpingBoot')    }
+        string(name:'ImageName', description: 'Name of the docker build', defaultValue:'javaapp')
+        string(name:'ImageTag', description: 'Name of the Image Tag', defaultValue:'v1')
+        string(name:'AppName', description: 'Name of the App', defaultValue:'SrpingBoot')    }
 
     stages{
 
