@@ -77,8 +77,8 @@ pipeline{
             steps{
                 script{
 
-                    sleep(60)
-                    timeout(time: 1,unit: 'MINUTES'){
+                    sleep(time:20,unit:"SECONDS")
+                    timeout(time: 20,unit: 'SECONDS'){
                     def sonarQubeCredentials = 'sonarqube-api'
                     def qg=qualityGateStatus(sonarQubeCredentials)
                     print "Finished waiting"
