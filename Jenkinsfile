@@ -116,5 +116,19 @@ pipeline{
         }
         }
 
+    stage('Docker Image Scan: Trivia'){    
+        
+        when{
+            expression{params.action == 'Create'}
+        }
+        
+        steps{
+            script{
+                dockerImageScan("${params.ImageName}","${params.ImageTag}","${params.DockerHubUserName}")
+            }
+        }
+        }
+
+
     }
 }
