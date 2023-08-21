@@ -74,10 +74,17 @@ pipeline{
         }
             steps{
                 script{
-                    def sonarQubeCredentials = 'sonarqube-api'
 
-                    qualityGateStatus(sonarQubeCredentials)
-                }
+                    sleep(60)
+                    timeout(time: 1,unit: 'MINUTES'){
+                    def sonarQubeCredentials = 'sonarqube-api'
+                    def qg=qualityGateStatus(sonarQubeCredentials)
+                    print "Finished waiting"
+                if (qg.status != 'OK') {
+                     error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                        }   
+                    }
+                                    }
             }
         }
         
