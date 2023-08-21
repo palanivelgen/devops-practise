@@ -7,7 +7,7 @@ pipeline{
     }
 
     parameters{
-        choice(name: 'action',choices:'Create\nDestroy', description:'Choose Create/Destroy')4
+        choice(name: 'action',choices:'Create\nDestroy', description:'Choose Create/Destroy')
         string(name:'ImageName', description: 'Name of the docker build', defaultValue:'javaapp')
         string(name:'ImageTag', description: 'Name of the Image Tag', defaultValue:'v1')
         string(name:'DockerHubUserName', description: 'Name of the App', defaultValue:'pazhani11')    }
